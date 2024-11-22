@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.css" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.18.1/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.js"></script>
+
+    <!-- Favicon -->
+  <link rel="shortcut icon" href="{% static 'img/logobaru.jpg' %}" type="image/x-icon rounded" />
+  <title>EduQuest</title>
+</head>
+
+<body>
+  <!-- sidebar content -->
+    <div class="sidebar">
+        <div class="logo"></div>
+        <ul class="menu">
+            <li class="active">
+                <a href="#">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-user"></i>
+                    <span>Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Courses</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-cog"></i>
+                    <span>Setting</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-question-circle"></i>
+                    <span>FAQ</span>
+                </a>
+            </li>
+            <li class="logout">
+                <a href="{% url 'edu_app:logout' %}">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- header content -->
+    <div class="main-content">
+        <div class="header--wrapper">
+            <div class="header--title">
+                <span>Primary</span>
+                <h2>Dashboard</h2>
+            </div>
+            <div class="user--info">
+                <div class="search-box">
+                <i class="fa-solid fa-search"></i>
+                <input type="text" placeholder="Search"/>
+            </div>
+            <img src="{% static 'img/logobaru.jpg' %}" alt="">
+            </div>
+        </div>
+                
+
+        <!-- banner welcome message -->
+        <div class="dashboard">
+            <div class="welcome-message">
+                <h2>Senang melihatmu kembali, <span id="username">Jilan</span>!</h2>
+                <p>Kamu telah menyelesaikan <strong>3 pelajaran</strong> hari ini. Terus lanjutkan! Kamu hampir selesai.</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 80%;"></div>
+                </div>
+                <span class="progress-text">80%</span>
+            </div>
+            <div class="illustration">
+                <!-- Anda dapat menambahkan gambar ilustrasi di sini atau menggunakan CSS untuk membuat ilustrasi serupa -->
+                <img src="{% static 'img/welcome.jpg' %}" alt="Ilustrasi" />
+            </div>
+        </div>
+
+    <div class="content-wrapper">
+        
+        <!-- semua kelas -->
+        <div class="tabular-wrapper">
+          <div class="card-container">
+              <h3 class="main-title">My Courses</h3>
+              <div class="card-wrapper">
+                  <!-- Card 1 -->
+                  <div class="class--card light-red" >
+                      <div class="card-image">
+                          <img src="{% static 'img/kelas 2.jpg' %}" alt="Course 1 Image">
+                      </div>
+                      <div class="card-content">
+                          <h4 class="course-title">Kelas Kursus 1</h4>
+                          <p class="course-description">Deskripsi singkat tentang kursus ini.</p>
+                      </div>
+                  </div>
+                  
+                  <!-- Card 2 -->
+                  <div class="class--card light-purple">
+                      <div class="card-image">
+                          <img src="{% static 'img/kelas 1.jpg' %}" alt="Course 2 Image">
+                      </div>
+                      <div class="card-content">
+                          <h4 class="course-title">Kelas Kursus 2</h4>
+                          <p class="course-description">Deskripsi singkat tentang kursus ini.</p>
+                      </div>
+                  </div>
+      
+                  <!-- Card 3 -->
+                  <div class="class--card light-red">
+                      <div class="card-image">
+                          <img src="{% static 'img/kelas 3.jpg' %}" alt="Course 3 Image">
+                      </div>
+                      <div class="card-content">
+                          <h4 class="course-title">Kelas Kursus 3</h4>
+                          <p class="course-description">Deskripsi singkat tentang kursus ini.</p>
+                      </div>
+                  </div>
+      
+                  <!-- Card 4 -->
+                  <div class="class--card light-purple">
+                      <div class="card-image">
+                          <img src="{% static 'img/kelas 2.jpg' %}" alt="Course 4 Image">
+                      </div>
+                      <div class="card-content">
+                          <h4 class="course-title">Kelas Kursus 4</h4>
+                          <p class="course-description">Deskripsi singkat tentang kursus ini.</p>
+                      </div>
+                  </div>
+      
+                  <!-- Card 5 -->
+                  <div class="class--card light-red">
+                      <div class="card-image">
+                          <img src="{% static 'img/kelas 1.jpg' %}" alt="Course 5 Image">
+                      </div>
+                      <div class="card-content">
+                          <h4 class="course-title">Kelas Kursus 5</h4>
+                          <p class="course-description">Deskripsi singkat tentang kursus ini.</p>
+                      </div>
+                  </div>
+      
+                  <!-- Card 6 -->
+                  <div class="class--card light-purple">
+                      <div class="card-image">
+                          <img src="{% static 'img/kelas 3.jpg' %}" alt="Course 6 Image">
+                      </div>
+                      <div class="card-content">
+                          <h4 class="course-title">Kelas Kursus 6</h4>
+                          <p class="course-description">Deskripsi singkat tentang kursus ini.</p>
+                      </div>
+                  </div>
+
+                  <p><a href="#">All Courses</a></p>
+              </div>
+          </div>
+      </div>
+
+      <!-- Schedule Container -->
+      <div class="schedule-container">
+        <h3 class="main-title">Schedule</h3>
+        <div id="schedule" class="schedule">
+            <div id="calendar"></div> 
+        </div>
+        </div>
+
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                events: [
+                    {
+                        title: 'Event 1',
+                        start: '2024-11-12'
+                    },
+                    {
+                        title: 'Event 2',
+                        start: '2024-11-14',
+                        end: '2024-11-16'
+                    }
+                ]
+            });
+        });
+      </script> 
+      
+</body>
+</html>
